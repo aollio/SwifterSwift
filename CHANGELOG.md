@@ -1,21 +1,306 @@
 # CHANGELOG
 The changelog for **SwifterSwift**. Also see the [releases](https://github.com/SwifterSwift/SwifterSwift/releases) on GitHub.
 
+# Upcoming release
+
+### Added
+- **FileManager**
+  - `createTemporaryDirectory()` to create a directory for saving temporary files. [#615](https://github.com/SwifterSwift/SwifterSwift/pull/615) by [guykogus](https://github.com/guykogus)
+- **UILabel**
+    - Added `init(text:style)` to create a `UILabel` with a text and font style. [#607](https://github.com/SwifterSwift/SwifterSwift/pull/607) by [marcocapano](https://github.com/marcocapano)
+- **UIViewController**
+    - Added `presentPopover(_:sourcePoint:size:delegate:animated:completion:)` method to quickly present a `UIViewController` as a popover. [#593](https://github.com/SwifterSwift/SwifterSwift/pull/593) by [marcocapano](https://github.com/marcocapano)
+- **Sequence**
+  - Added `duplicates()` for getting the duplicated elements in a sequence. [#605](https://github.com/SwifterSwift/SwifterSwift/pull/605) by [dylancfe15](https://github.com/dylancfe15)
+- **Date**
+- Added `tomorrow` computed property to get tomorrow's date avoiding calling `adding(_:value:)` function. (Completes PR #578) [#587](https://github.com/SwifterSwift/SwifterSwift/pull/587) by [AlexeiGitH](https://github.com/AlexeiGitH)
+  - `random(in:)` and `random(in:using:)` to generate random dates using the built-in random functions added to Swift 4.2. [#576](https://github.com/SwifterSwift/SwifterSwift/pull/576/files) by [guykogus](https://github.com/guykogus)
+- **Dictionary**
+  - Added `Dictionary[path:]` subscript for deep fetching/setting nested values. [#574](https://github.com/SwifterSwift/SwifterSwift/pull/573) by [@calebkleveter](https://github.com/calebkleveter)
+- **UIColor**
+  - Added `whatsApp` color constant. [#581](https://github.com/SwifterSwift/SwifterSwift/pull/581) by [staffler-xyz](https://github.com/staffler-xyz)
+- **DispatchQueue**
+  - Added `isMainQueue` to check if current queue is main queue. [#585](https://github.com/SwifterSwift/SwifterSwift/pull/585) by [jianstm](https://github.com/jianstm)
+  - Added `isCurrent(_:)` to check if current queue is specified queue. [#585](https://github.com/SwifterSwift/SwifterSwift/pull/585) by [jianstm](https://github.com/jianstm)
+- **BidirectionalCollection**
+  - Added `subscript[offset:]` to get element with negative offset. [#582](https://github.com/SwifterSwift/SwifterSwift/pull/582) by [jianstm](https://github.com/jianstm)
+- **BinaryFloatingPointExtensions**
+  - Added `rounded(numberOfDecimalPlaces:rule:)` to get the rounded floating number with the specified number of decimal places. [#583](https://github.com/SwifterSwift/SwifterSwift/pull/583) by [jianstm](https://github.com/jianstm)
+- **UIActivity**
+  - Added `ActivityType` constants for iCloud Drive, WhatsApp, LinkedIn and XING. [#580](https://github.com/SwifterSwift/SwifterSwift/pull/580) by [staffler-xyz](https://github.com/staffler-xyz)
+### Changed
+- **Examples**:
+  - Replace Examples.md with Examples.playground to let users try some examples out of extensions. [#596](https://github.com/SwifterSwift/SwifterSwift/pull/596) by [maxxx777](https://github.com/maxxx777)
+- **StringProtocol**
+  - Removing Index constraint on `commonSuffix` extension and improving performance and tests. [#606](https://github.com/SwifterSwift/SwifterSwift/pull/606) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+### Fixed
+- **Installation**:
+  - Update `podspec` to make the group paths in Pods project of SwifterSwift correct with Cocoapods installation. [#590](https://github.com/SwifterSwift/SwifterSwift/pull/590) by [dklinzh](https://github.com/dklinzh)
+- **UIImage**:
+  - `cropped(to:)` fixed size checking. [#575](https://github.com/SwifterSwift/SwifterSwift/pull/575) by [ilyahal](https://github.com/ilyahal)
+- **NSAttributedString** 
+  - Fixed `attributes` property crash when the string is empty. [#617](https://github.com/SwifterSwift/SwifterSwift/pull/617) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+### Deprecated
+- **Date**
+  - `random(from:upTo:)` in favor of `random(in:)` and `random(in:using:)`. [#576](https://github.com/SwifterSwift/SwifterSwift/pull/576) by [guykogus](https://github.com/guykogus)
+  - `timeZone` should never have been added because `Date`s are timezone-agnostic. This came to my attention during unit testing over daylight savings changes. [#594](https://github.com/SwifterSwift/SwifterSwift/pull/594) by [guykogus](https://github.com/guykogus)
+### Removed
+### Security
+
 ---
 
-> # Upcoming release
->
-> ### Added
+# [v4.6.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/4.6.0)
+
+### Added
+- **Date**
+    - Added `yesterday` computed property to quickly get yesterday's date to avoid calling `adding(_:value:)` function. [#578](https://github.com/SwifterSwift/SwifterSwift/pull/578) by [AlexeiGitH](https://github.com/AlexeiGitH)
+- **UIView**
+  - Added `ancestorView(where:)` and `ancestorView(withClass:)` to search for a view in the superviews. [#560](https://github.com/SwifterSwift/SwifterSwift/pull/560) by [overovermind](https://github.com/overovermind)
+### Fixed
+- Fixed Cocoapods installation setting the correct Swift version
+
+---
+
+# [v4.5.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/4.5.0)
+
+### Added
+- **CGVector**
+  - Added `angle` computed property to get the angle of the vector (in radians). [#527](https://github.com/SwifterSwift/SwifterSwift/pull/527) by [moyerr](https://github.com/moyerr)
+  - Added `magnitude` computed property to get the magnitude (or length) of the vector. [#527](https://github.com/SwifterSwift/SwifterSwift/pull/527) by [moyerr](https://github.com/moyerr)
+  - Added scalar multiplication of CGFloat and CGVector via standard multiplication operator (\*). [#527](https://github.com/SwifterSwift/SwifterSwift/pull/527) by [moyerr](https://github.com/moyerr)
+  - Added negation of vectors via prefix (-) operator. [#527](https://github.com/SwifterSwift/SwifterSwift/pull/527) by [moyerr](https://github.com/moyerr)
+  - Added `init(angle:magnitude:)` to create vectors based on their angle and magnitude. [#527](https://github.com/SwifterSwift/SwifterSwift/pull/527) by [moyerr](https://github.com/moyerr)
+-**UIRefreshControl**:
+  - `beginRefresh(in tableView:, animated:, sendAction:)` UIRefreshControl extension to begin refresh programatically. [#525](https://github.com/SwifterSwift/SwifterSwift/pull/525) by [ratulSharker](https://github.com/ratulSharker)
+- **Dictionary**:
+  - Added `removeValueForRandomKey()` to remove a value for a random key from a dictionary. [#497](https://github.com/SwifterSwift/SwifterSwift/pull/497) by [vyax](https://github.com/vyax).
+  - Added `mapKeysAndValues(_:)` to map a `Dictionary` into a `Dictionary` with different (or same) `Key` and `Value` types. [#546](https://github.com/SwifterSwift/SwifterSwift/pull/546) by [guykogus](https://github.com/guykogus)
+  - Added `compactMapKeysAndValues(_:)` to map a `Dictionary` into a `Dictionary`, excluding `nil` results, with different (or same) `Key` and `Value` types. [#546](https://github.com/SwifterSwift/SwifterSwift/pull/546) by [guykogus](https://github.com/guykogus)
+  - Added `keys(forValue:)` which returns an array of all keys that have the given value in dictionary. [#561](https://github.com/SwifterSwift/SwifterSwift/pull/561) by [mauliksharma](https://github.com/mauliksharma).
+- **RangeReplaceableCollection**:
+  - Added `removeRandomElement()` to remove a random element from a collection. [#497](https://github.com/SwifterSwift/SwifterSwift/pull/497) by [vyax](https://github.com/vyax).
+- **UIView**
+  - Added `addGestureRecognizers(_:)` which accepts an array of `UIGestureRecognizer` to add multiple gesture recognizers to a view with one call. [#523](https://github.com/SwifterSwift/SwifterSwift/pull/523) by [moyerr](https://github.com/moyerr)
+  - Added `removeGestureRecognizers(_:)` which accepts an array of `UIGestureRecognizer` to remove multiple gesture recognizers from a view with one call. [#523](https://github.com/SwifterSwift/SwifterSwift/pull/523) by [moyerr](https://github.com/moyerr)
+- **UIViewController**
+  - Added `addChildViewController(_:toContainerView)` to easily add child view controllers. Accepts a `UIViewController` and a `UIView` to add the child's view to. 
+  - Added `removeViewAndControllerFromParentViewController()` to remove a `UIViewController` from its parent.
+- **UIEdgeInsets**
+  - Added  `insetBy(top:)`, `insetBy(left:)`, `insetBy(bottom:)`, `insetBy(right:)`, `insetBy(horizontal:)` and `insetBy(vertical:)` to creates an `UIEdgeInsets` based on current value and adjusted by given offset. [#532](https://github.com/SwifterSwift/SwifterSwift/pull/532) by [VincentSit](https://github.com/VincentSit).
+  - Added operators `+` and `+=` to add two insets together in order to extend them. [#557](https://github.com/SwifterSwift/SwifterSwift/pull/557) by [guykogus](https://github.com/guykogus)
+- **UILayoutPriority**
+  - Added `init(floatLiteral value: Float)` initializer to initialize priority with float literal. [#549](https://github.com/SwifterSwift/SwifterSwift/pull/549) by [diamantidis](https://github.com/diamantidis).
+  - Added `init(integerLiteral value: Int)` initializer to initialize priority with integer literal. [#549](https://github.com/SwifterSwift/SwifterSwift/pull/549) by [diamantidis](https://github.com/diamantidis).
+- **RangeReplaceableCollection**
+  - `init(expression:count:)` to create a collection of a given count initialized with an expression.[#537](https://github.com/SwifterSwift/SwifterSwift/pull/537) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **Optional**:
+  - Added `?=` operator to assign to nil optionals only. [#538](https://github.com/SwifterSwift/SwifterSwift/pull/538) by [viktart](https://github.com/viktart)
+- **Data**:
+  - Added `jsonObject(options:)` to convert a data object into a JSON object. [#542](https://github.com/SwifterSwift/SwifterSwift/pull/542) by [guykogus](https://github.com/guykogus)
 - **URL**
-  - Added `queryParmeters` property to get the query parameters from a URL as a dictionary. [#370](https://github.com/SwifterSwift/SwifterSwift/pull/370) by [nathanbacon](https://github.com/nathanbacon).
+  - Added `droppedScheme()` which returns new `URL` that does not have scheme. [#528](https://github.com/SwifterSwift/SwifterSwift/pull/528) by [sammy-sc](https://github.com/sammy-SC)
+- **CGSize**
+  - Added operator `+` to return the addition of two CGSize.
+  - Added operator `+=` to add a CGSize to another.
+  - Added operator `-` to return the subtraction of two CGSize.
+  - Added operator `-=` to subtract a CGSize from another.
+  - Added operator `CGSize * CGSize` to return the multiplication of two CGSize.
+  - Added operator `CGSize * CGFloat` and `CGFloat * CGSize` to return the multiplication of a CGSize and a CGFloat value.
+  - Added operator `CGSize *= CGSize` to multiply a CGSize with another one.
+  - Added operator `CGSize *= CGFloat` to multiply a CGSize with a CGFloat value.
+- **UIImage**:
+  - Added `rotate(by:)` for generating rotated versions of images. There are 2 versions, one where the angle is passed directly as a `CGFloat` in radians, the other using the `Measurement` class, which is only available for iOS 10+/tvOS 10+/watchOS 3+. [#555](https://github.com/SwifterSwift/SwifterSwift/pull/555) by [guykogus](https://github.com/guykogus)
+
+### Changed
+- **RangeReplaceableCollection**:
+  - `rotate(by:)` and `rotated(by:)` array extensions now are more generic `RangeReplaceableCollection` extensions. [#512](https://github.com/SwifterSwift/SwifterSwift/pull/512) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+  - `removeFirst(where:)` array extension now is more generic `RangeReplaceableCollection` extensions. [#516](https://github.com/SwifterSwift/SwifterSwift/pull/516) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **RandomAccessCollection**:
+  - `indices(of:)` array extension now is more generic `RandomAccessCollection` extensions. [#516](https://github.com/SwifterSwift/SwifterSwift/pull/516) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **UIView**:
+  - Improved performance in `fillToSuperview()` UIView extension. [#540](https://github.com/SwifterSwift/SwifterSwift/pull/540) by [viktart](https://github.com/viktart)
+
+### Fixed
+- **UIImage**:
+- Fixed `scaled(toWidth:, with orientation:)` and `scaled(toHeight:, with orientation:)` were using image's scale as the scale factor. [#515](https://github.com/SwifterSwift/SwifterSwift/pull/515) by [VincentSit](https://github.com/VincentSit).
+- **String**:
+  - Used [RFC 5322](http://emailregex.com/) in `isValidEmail`, an email address regex that 99.99% works. [#517](https://github.com/SwifterSwift/SwifterSwift/pull/517) by [Omar Albeik](https://github.com/omaralbeik)
+  - Fixed `unicodeArray()` not returning the correct unicode value due to Swift 4.2 new hashing system. [#544](https://github.com/SwifterSwift/SwifterSwift/pull/544) by [Omar Albeik](https://github.com/omaralbeik)
+
+### Deprecated
+- **String**:
+  - `isEmail` property has been renamed to `isValidEmail`.
+
+### Removed
+
+### Security
+
+---
+
+# [v4.4.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/4.4.0)
+
+### Added
+- **SKNode**:
+  - Added `descendants` method to get an array of all descendants of an SKNode. [#490](https://github.com/SwifterSwift/SwifterSwift/pull/490) by [oliviabrown9](https://github.com/oliviabrown9).
+- **Comparable**:
+  - Added `isBetween(min:max:)` and `clamped(min:max:)` to confirm a value is between bounds or limit it between bounds. [#466](https://github.com/SwifterSwift/SwifterSwift/pull/466) by [freak4pc](https://github.com/freak4pc).
+- **UIScrollView**:
+  - Added `snapshot` method to get a full snapshot of a rendered scroll view. [#457](https://github.com/SwifterSwift/SwifterSwift/pull/457) by [aliamcami](https://github.com/aliamcami).
+- **UIGestureRecognizer**:
+  - Added `removeFromView()` method to remove recognizer from the view the recognizer is attached to. [#456](https://github.com/SwifterSwift/SwifterSwift/pull/456) by [mmdock](https://github.com/mmdock)
+- **Character**:
+  - Added `randomAlphanumeric()` method to generate a random alphanumeric Character. [#462](https://github.com/SwifterSwift/SwifterSwift/pull/462) by [oliviabrown9](https://github.com/oliviabrown9)
+- **String**:
+  - Added `firstCharacterUppercased()` method to return a string with only the first character uppercased. [#505](https://github.com/SwifterSwift/SwifterSwift/pull/505) by [happiehappie](https://github.com/happiehappie)
+- **UITextView**:
+  - Added `wrapToContent()` method which will remove insets, offsets, paddings which lies within UITextView's `bounds` and `contenSize`. [#458](https://github.com/SwifterSwift/SwifterSwift/pull/458) by [ratulSharker](https://github.com/ratulSharker)
+- **URL**
+  - Added `deletingAllPathComponents()` and `deleteAllPathComponents()` to delete all path components from a URL. [#441](https://github.com/SwifterSwift/SwifterSwift/pull/441) by [setoelkahfi](https://github.com/setoelkahfi).
+  - Added `queryValue(for:)` to get the value of a query key from a URL. [#467](https://github.com/SwifterSwift/SwifterSwift/pull/467) by [jdisho](https://github.com/jdisho).
+- **UITableView**:
+  - Added `isValidIndexPath(_:)` method to check whether given IndexPath is valid within UITableView. [#441](https://github.com/SwifterSwift/SwifterSwift/pull/441) by [setoelkahfi](https://github.com/setoelkahfi).
+  - Added `safeScrollToRow(at:at:animated:)` method to safely scroll UITableView to the given IndexPath. [#445](https://github.com/SwifterSwift/SwifterSwift/pull/445) by [setoelkahfi](https://github.com/setoelkahfi).
+- **Optional**:
+  - Added `isNilOrEmpty` property to check whether an optional is nil or empty collection.
+- **UIWindow**:
+  - Added `switchRootViewController` method to switch root view controller with animation. [#494](https://github.com/SwifterSwift/SwifterSwift/pull/494) by [omaralbeik](https://github.com/omaralbeik).
+- **Sequence**
+  - Added `containsDuplicates()` to check whether a sequence contains duplicates. [#496](https://github.com/SwifterSwift/SwifterSwift/pull/496) by [@vyax](https://github.com/vyax).
+  - Added `single(where:)` to get the only element of a sequence that matches a given condition. [#483](https://github.com/SwifterSwift/SwifterSwift/pull/483) by [andlang](https://github.com/andlang).
+- **UIStackView**:
+  - Added `addArrangedSubviews(_ views: )` to add an array of views to the end of the arrangedSubviews array. [#501](https://github.com/SwifterSwift/SwifterSwift/pull/501) by [omaralbeik](https://github.com/omaralbeik).
+  - Added `removeArrangedSubviews` to remove all views in stack’s array of arranged subviews. [#501](https://github.com/SwifterSwift/SwifterSwift/pull/501) by [omaralbeik](https://github.com/omaralbeik).
+- **UIEdgeInsets**
+  - Added `horizontal` and `vertical` properties. Also `init(inset:)` and `init(horizontal: vertical:)` initializers for convenience. [#500](https://github.com/SwifterSwift/SwifterSwift/pull/500) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+
+### Changed
+- **UITableView**:
+  - `dequeueReusableCell(withClass:for)`, `dequeueReusableCell(withClass)` now return `UITableViewCell` object, `fatalError(...)` if not found. [#439](https://github.com/SwifterSwift/SwifterSwift/pull/439) by [jdisho](https://github.com/jdisho)
+  - `dequeueReusableHeaderFooterView(withClass)`now returns `UITableViewHeaderFooterView` object, `fatalError(...)` if not found. [#439](https://github.com/SwifterSwift/SwifterSwift/pull/439) by [jdisho](https://github.com/jdisho)
+- **UICollectionView**:
+  - `dequeueReusableCell(withClass:for)` now returns `UICollectionViewCell` object, `fatalError(...)` if not found. [#439](https://github.com/SwifterSwift/SwifterSwift/pull/439) by [jdisho](https://github.com/jdisho)
+  - `dequeueReusableSupplementaryView(ofKind:withClass:for)`now returns `UICollectionReusableView` object, `fatalError(...)` if not found. [#439](https://github.com/SwifterSwift/SwifterSwift/pull/439) by [jdisho](https://github.com/jdisho)
+- **UIView**:
+  - **Breaking Change** `firstResponder` UIView extension is now a function and supports recursive find in the view hierarchy. [#447](https://github.com/SwifterSwift/SwifterSwift/pull/447) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+- **UIImage**:
+  - `scaled(toWidth:, opaque:, with orientation:)` and `scaled(toHeight:, opaque:, with orientation:)` now have an optional parameter for opaqueness. [#446](https://github.com/SwifterSwift/SwifterSwift/pull/446) by [vyax](https://github.com/vyax)
+- **Array/Collection/Sequence**
+  - The conformance of `sum()`, `last(where:)`, `reject(where:)`, `count(where:)`, `forEachReversed()`, `forEach(where:, body:)`, `accumulate(initial:, next:)`, `filtered(_:, map:)` and `contains(_:)` has been changed from Array to Sequence [#470](https://github.com/SwifterSwift/SwifterSwift/pull/470) by [vyax](https://github.com/vyax)
+  - The conformance of `average()`, `firstIndex(where:)`, `lastIndex(where:)`, `indices(where:)`, `forEach(slice:, body:)`, `group(by:)`, `firstIndex(of:)` and `lastIndex(of:)` has been changed from Array to Collection [#470](https://github.com/SwifterSwift/SwifterSwift/pull/470) by [vyax](https://github.com/vyax)
+- **Dictionary**
+  - The `removeAll(keys:)` changed its paramenter keys to a generic `Sequence` instead of an `Array`. [#482](https://github.com/SwifterSwift/SwifterSwift/pull/482) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+
+### Deprecated
+- **Array**
+  - `groupByKey(keyForValue:)`. [#454](https://github.com/SwifterSwift/SwifterSwift/pull/454) by [@calebkleveter](https://github.com/calebkleveter)
+
+>### Removed
+
+### Fixed
+- **UIImage**:
+  - `scaled(toWidth:, with orientation:)` and `scaled(toHeight:, with orientation:)` were ignoring an image's scale. [#446](https://github.com/SwifterSwift/SwifterSwift/pull/446) by [vyax](https://github.com/vyax)
+  - `init(color:size:)` fixed to ensure that `UIGraphicsEndImageContext` is always called after `UIGraphicsBeginImageContextWithOptions(_:_:_)` [#507](https://github.com/SwifterSwift/SwifterSwift/pull/507) by [guykogus](https://github.com/guykogus)
+
+---
+
+# [v4.3.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/4.3.0)
+
+### Added
+- **Swift 4.1 / Xcode 9.3**
+  - Added Swift 4.1 support.
+- **Linux Support**:
+  - Updated all swift files to use Swift's 4.1 [`# if canImport(module)`](https://github.com/apple/swift-evolution/blob/master/proposals/0075-import-test.md) statement, which brings the project one step closer to first-class Linux support.
+- **Sequence**
+  - `all()` method moved from ArrayExtensions to SequenceExtensions. [#424](https://github.com/SwifterSwift/SwifterSwift/pull/424) by [n0an](https://github.com/n0an).
+  - `none()` method moved from ArrayExtensions to SequenceExtensions. [#424](https://github.com/SwifterSwift/SwifterSwift/pull/424) by [n0an](https://github.com/n0an).
+  - Added `any()` method to return if any element of sequence elements conforms to given condition. [#424](https://github.com/SwifterSwift/SwifterSwift/pull/424) by [n0an](https://github.com/n0an).
+- **SignedInteger**
+  - added `ordinalString(locale:)` method to return string ordinal representation of number in specified locale language. [#434](https://github.com/SwifterSwift/SwifterSwift/pull/434) by [n0an](https://github.com/n0an).
+- **SignedNumeric**
+  - added `spelledOutString(locale:)` method to return string representation of number spelled in specified locale language. [#434](https://github.com/SwifterSwift/SwifterSwift/pull/434) by [n0an](https://github.com/n0an).
+- **String**
+  - added computed property `isSpelledCorrectly` to check if the given string has typos or not. [#430](https://github.com/SwifterSwift/SwifterSwift/pull/430) by [n0an](https://github.com/n0an).
+  - added `removingPrefix(_ prefix:)` method to remove given prefix from the string. [#430](https://github.com/SwifterSwift/SwifterSwift/pull/430) by [n0an](https://github.com/n0an).
+  - added `removingSuffix(_ suffix:)` method to remove given suffix from the string. [#430](https://github.com/SwifterSwift/SwifterSwift/pull/430) by [n0an](https://github.com/n0an).
+- **SwiftLint**:
+  - reduced the number of disabled rules in _.swiftlint.yml_, please add `disable` and `enable` statements from now on when needed in code.
+  - added SwiftLint to test targets to insure code style consistency across the project.
+
+### Changed
+- **SignedNumeric**:
+  - `asLocaleCurrency` now returns an optional string.
+- **Array**:
+  - `rotate` method now returns a `discardableResult`.
+  - `shuffle` method now returns a `discardableResult`.
+  - `sort<T: Comparable>(by:, ascending:)` method now returns a `discardableResult`.
+  - `keep` method now returns a `discardableResult`.
+
+### Deprecated
+- **UIStoryboard**:
+  - `mainStoryboard` property has been renamed to `main`.
+- **Array**:
+  - deprecated `pop` method in favor of Swift’s `popLast`.
+  - deprecated `push` method in favor of Swift’s `append`.
+  - deprecated `swap` method in favor of Swift’s `swapAt`.
+  - deprecated `item(at index: Int)` method in favor of `subscript(safe:)`.
+  - `duplicatesRemoved` method has been renamed to `withoutDuplicates`.
+- **Bool**:
+  - deprecated `toggled` property, use `!self` instead.
+  - deprecated `toggle` method, use `self = !self` instead.
+
+### Fixed
+- **String**
+   - Fixed UIView extension `addShadow`  was not showing the shadow on view bug. [#420](https://github.com/SwifterSwift/SwifterSwift/pull/420) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
+
+---
+
+# [v4.2.0](https://github.com/SwifterSwift/SwifterSwift/releases/tag/4.2.0)
+
+### Added
+- **MKPolyline**
+  - Added `.coordinates` property, to return an array of coordinates for the provided polyline. [#416](https://github.com/SwifterSwift/SwifterSwift/pull/416) by [@freak4pc](https://github.com/freak4pc).
+  - Added `init(coordinates:)` initializer, to initialize a `MKPolyline` with a provided array of coordinates. [#416](https://github.com/SwifterSwift/SwifterSwift/pull/416) by [@freak4pc](https://github.com/freak4pc).
+- **Optional**
+  - Added `.unwrapped(or:)` method, to get the value wrapped by an optional or throw a custom error. [#413](https://github.com/SwifterSwift/SwifterSwift/pull/413) by [@calebkleveter](https://github.com/calebkleveter).
+- **UIButton**
+  - added `centerTextAndImage(spacing:)` to Center align title text and image on UIButton. [#365](https://github.com/SwifterSwift/SwifterSwift/pull/365) by [@imjog](https://github.com/imjog).
 - **Array**
   - added `divided(by:)` to separate an array into 2 arrays based on a predicate. [#367](https://github.com/SwifterSwift/SwifterSwift/pull/367) by [@neoneye](https://github.com/neoneye).
-> ### Changed
-> ### Deprecated
-> ### Removed
-> ### Fixed
-> ### Security
+- **Int**
+  - added `roundToNearest(n:)` to round an integer to the closest multiple of a given n. [#381](https://github.com/SwifterSwift/SwifterSwift/pull/381) by [@vyax](https://github.com/vyax).
+- **FileManager**
+  - added `jsonFromFile(atPath path:, readingOptions:)` to open a JSON file and serialize its content to a [String, Any]? instance with a provided path. [#390](https://github.com/SwifterSwift/SwifterSwift/pull/390) by [jason-ingenuity](https://github.com/jason-ingenuity).
+  - added `jsonFromFile(withFilename filename:, at bundleClass:, readingOptions:)` to open a JSON file and serialize its content to a [String, Any]? instance given a filename. [#390](https://github.com/SwifterSwift/SwifterSwift/pull/390) by [jason-ingenuity](https://github.com/jason-ingenuity).
+- **Int**
+  - added a more performant and memory efficient `digits` property to return array of integers. [#393](https://github.com/SwifterSwift/SwifterSwift/pull/393) by [FrankKair](https://github.com/FrankKair).
+- **StringProtocol**
+  - added `commonSuffix(with:, options:)` to get the longest common suffix of the receiver and a given string. [#379](https://github.com/SwifterSwift/SwifterSwift/pull/379) by [@vyax](https://github.com/vyax).
+- **UICollectionView**
+  - added `register(nibWithCellClass:, at bundleClass:)` method to be able to register a cell with custom nib just by its class name. [#386](https://github.com/SwifterSwift/SwifterSwift/pull/386) by [jason-ingenuity](https://github.com/jason-ingenuity).
+- **UIFont**
+  - added `bold` and `italic` to UIFont. [#382](https://github.com/SwifterSwift/SwifterSwift/pull/382) by [@vyax](https://github.com/vyax).
+- **UIImage**
+  - added `withRoundedCorners(radius:)` to round the corners of an image. The parameter radius is optional, the resulting image will be round if it is unspecified. [#380](https://github.com/SwifterSwift/SwifterSwift/pull/380) by [@vyax](https://github.com/vyax).
+- **UITableView**
+  - added `register(nibWithCellClass:, at bundleClass:)` method to be able to register a cell with custom nib just by its class name. [#386](https://github.com/SwifterSwift/SwifterSwift/pull/386) by [jason-ingenuity](https://github.com/jason-ingenuity).
+- **URL**
+  - added `queryParmeters` property to get the query parameters from a URL as a dictionary. [#370](https://github.com/SwifterSwift/SwifterSwift/pull/370) by [nathanbacon](https://github.com/nathanbacon).
+  - added `thumbnail(fromTime:)` to generate a thumbnail image from a given url. [410](https://github.com/SwifterSwift/SwifterSwift/pull/410) by [BennX](https://github.com/BennX).
+- **UserDefaults**
+  - added `object(type: with key: usingDecoder decoder:)` method to be able to retrieve Codable objects from UserDefaults. [#388](https://github.com/SwifterSwift/SwifterSwift/pull/388) by [jason-ingenuity](https://github.com/jason-ingenuity).
+  - added `set(codable: forKey key: usingEncoder encoder:)` method to be able to store Codable objects from UserDefaults. [#388](https://github.com/SwifterSwift/SwifterSwift/pull/388) by [jason-ingenuity](https://github.com/jason-ingenuity).
+- **String**
+  - added computed property `isWhitespace` to check if the given string is blank or not.[#363](https://github.com/SwifterSwift/SwifterSwift/pull/363) by [rkp1026](https://github.com/rkp1026).
+  - added `isDigits` to check if string only contains digits. [#396](https://github.com/SwifterSwift/SwifterSwift/pull/396) by [seifeet](https://github.com/seifeet).
+  - added `toSlug()` to return a slug version of a given string. [397#](https://github.com/SwifterSwift/SwifterSwift/pull/397) by [FrankKair](https://github.com/FrankKair)
+- New **UIStackView**
+  - added `init(arrangedSubviews:, axis:, spacing:, alignment:, distribution:)` to directly initialize a `UIStackView` with an array of `UIViews`. [#409](https://github.com/SwifterSwift/SwifterSwift/pull/409) by [BennX](https://github.com/BennX)
 
+### Fixed
+- **String**
+  - Fixed `isNumeric` to check if string is a valid Swift number and added isDigits to check if string only contains digits. [#396](https://github.com/SwifterSwift/SwifterSwift/pull/396) by [seifeet](https://github.com/seifeet).
+- **Collection**
+  - Fixed `randomItem` crash with empty array. [#405](https://github.com/SwifterSwift/SwifterSwift/pull/405) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
 
 ---
 
@@ -35,7 +320,6 @@ The changelog for **SwifterSwift**. Also see the [releases](https://github.com/S
   - Added `sort(by: KeyPath)` and `sorted(by: KeyPath)` to sort arrays based on Swift 4 keyPath. [#343](https://github.com/SwifterSwift/SwifterSwift/pull/343) by [LucianoPAlmeida](https://github.com/LucianoPAlmeida).
 - **String**
   - Added `loremIpsum(ofLength: )` static function to return a lorem ipsum string. [#318](https://github.com/SwifterSwift/SwifterSwift/issues/318) by [omaralbeik](https://github.com/omaralbeik).
-  -  Added computed property `isWhitespace` to check if the given string is blank or not.[#363](https://github.com/SwifterSwift/SwifterSwift/pull/363) by [rkp1026](https://github.com/rkp1026).
 - **UIDatePicker**
   - Added `textColor` to get and set the text color of a UIDatePicker. [#328](https://github.com/SwifterSwift/SwifterSwift/issues/328) by [omaralbeik](https://github.com/omaralbeik).
 - **NSImage**
@@ -44,7 +328,8 @@ The changelog for **SwifterSwift**. Also see the [releases](https://github.com/S
   - Added `random(from: Date, upTo: Date) -> Date` method that return radom date in in the specified range [#336](https://github.com/SwifterSwift/SwifterSwift/pull/336) by [akuzminskyi](https://github.com/akuzminskyi).
   - Added `string(withFormat format: String)` method to get a string from a date with the given format.
   - Added `init?(integerLiteral value: Int)` initializer to create date object from Int literal. [#342](https://github.com/SwifterSwift/SwifterSwift/pull/342) by [n0an](https://github.com/n0an).
-
+- **UIViewController**
+  - Added  `showAlert(title: String?, message: String?, buttonTitles: [String]?, highlightedButtonIndex: Int?, completion: ((Int) -> ())?)`  for conveniently displaying an alert from any view controller [#364](https://github.com/SwifterSwift/SwifterSwift/pull/364) by [rkp1026](https://github.com/rkp1026)
 ### Changed
 
 - **Array**
@@ -370,7 +655,7 @@ N/A
 
 - New **Array** extensions
     - added `groupByKey` to group the elements of the array by key in a dictionary. [#181](https://github.com/SwifterSwift/SwifterSwift/pull/181) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
-    - added `forEach(slice:body:)` to iterate by specified slice size and call a closure. [#194](https://github.com/SwifterSwift/SwifterSwift/pull/194/files) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
+    - added `forEach(slice:body:)` to iterate by specified slice size and call a closure. [#194](https://github.com/SwifterSwift/SwifterSwift/pull/194) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
 - New **Dictionary** extensions
     - add `count(where:)` to count dictionary elements where the condition returns true. [#193](https://github.com/SwifterSwift/SwifterSwift/pull/193) by [@LucianoPAlmeida](https://github.com/LucianoPAlmeida)
 
@@ -999,7 +1284,6 @@ DateExtensions:
 - **nearestHalfHour**: Return nearest half hour to date
 - **changing(component, value)**: Return date by changing a component
 - Fixed a bug in nearestFiveMinutes, nearestTenMinutes where date was always rounded always to next 5, 10 mins
-
 
 ---
 

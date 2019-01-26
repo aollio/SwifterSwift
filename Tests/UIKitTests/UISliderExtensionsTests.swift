@@ -6,10 +6,11 @@
 //  Copyright © 2017 SwifterSwift
 //
 
-#if os(iOS)
-    
 import XCTest
 @testable import SwifterSwift
+
+#if os(iOS)
+import UIKit
 
 final class UISliderExtensionsTests: XCTestCase {
 
@@ -24,22 +25,21 @@ final class UISliderExtensionsTests: XCTestCase {
         }
         waitForExpectations(timeout: 5, handler: nil)
     }
-    
+
     func testSetValue() {
         let slider = UISlider()
         slider.minimumValue = 0
         slider.maximumValue = 100
         var completionCalled = false
-        
+
         slider.setValue(99) {
             completionCalled = true
             XCTAssert(completionCalled)
         }
         XCTAssertFalse(completionCalled)
         XCTAssertEqual(slider.value, 99)
-        
     }
-    
+
     func testCompletionCalled() {
         let slider = UISlider()
         slider.minimumValue = 0
@@ -51,8 +51,7 @@ final class UISliderExtensionsTests: XCTestCase {
         }
         XCTAssertEqual(slider.value, 50.0)
         waitForExpectations(timeout: 3, handler: nil)
-
     }
-    
+
 }
 #endif

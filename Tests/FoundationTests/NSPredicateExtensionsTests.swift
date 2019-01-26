@@ -9,8 +9,11 @@
 import XCTest
 @testable import SwifterSwift
 
+#if canImport(Foundation)
+import Foundation
+
 final class NSPredicateExtensionsTests: XCTestCase {
-    
+
     func testNot() {
         let predicate = NSPredicate(format: "a < 7")
         let notPredicate = predicate.not
@@ -19,7 +22,7 @@ final class NSPredicateExtensionsTests: XCTestCase {
             XCTAssertEqual(subpredicates, [predicate])
         }
     }
-    
+
     func testAndPredicate() {
         let predicate1 = NSPredicate(format: "a < 7")
         let predicate2 = NSPredicate(format: "a > 3")
@@ -29,7 +32,7 @@ final class NSPredicateExtensionsTests: XCTestCase {
             XCTAssertEqual(subpredicates, [predicate1, predicate2])
         }
     }
-    
+
     func testOrPredicate() {
         let predicate1 = NSPredicate(format: "a < 7")
         let predicate2 = NSPredicate(format: "a > 3")
@@ -39,7 +42,7 @@ final class NSPredicateExtensionsTests: XCTestCase {
             XCTAssertEqual(subpredicates, [predicate1, predicate2])
         }
     }
-    
+
     func testOperatorNot() {
         let predicate = NSPredicate(format: "a < 7")
         let notPredicate = !predicate
@@ -48,7 +51,7 @@ final class NSPredicateExtensionsTests: XCTestCase {
             XCTAssertEqual(subpredicates, [predicate])
         }
     }
-    
+
     func testOperatorAndPredicate() {
         let predicate1 = NSPredicate(format: "a < 7")
         let predicate2 = NSPredicate(format: "a > 3")
@@ -58,7 +61,7 @@ final class NSPredicateExtensionsTests: XCTestCase {
             XCTAssertEqual(subpredicates, [predicate1, predicate2])
         }
     }
-    
+
     func testOperatorOrPredicate() {
         let predicate1 = NSPredicate(format: "a < 7")
         let predicate2 = NSPredicate(format: "a > 3")
@@ -68,7 +71,7 @@ final class NSPredicateExtensionsTests: XCTestCase {
             XCTAssertEqual(subpredicates, [predicate1, predicate2])
         }
     }
-    
+
     func testOperatorSubPredicate() {
         let predicate1 = NSPredicate(format: "SELF BETWEEN{1,5}")
         let predicate2 = NSPredicate(format: "SELF BETWEEN{3,6}")
@@ -76,4 +79,7 @@ final class NSPredicateExtensionsTests: XCTestCase {
         XCTAssert(subPredicate.evaluate(with: 2))
         XCTAssertFalse(subPredicate.evaluate(with: 4))
     }
+
 }
+
+#endif
