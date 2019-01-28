@@ -1806,4 +1806,159 @@ public extension Color {
     }
 
 }
+
+// MARK: - Flat UI colors from Chameleon
+public extension Color {
+    
+    private static func hsb(_ hue: CGFloat, _ saturation: CGFloat,_ brightness: CGFloat, _ alpha: CGFloat) -> Color {
+        return Color(hue: hue, saturation: saturation, brightness: brightness, alpha: alpha)
+    }
+    /// Flat UI colors from Chameleon
+    public static var flatBlack = hsb(0.0, 0.0, 0.17, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatBlue = hsb(0.62, 0.50, 0.63, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatBrown = hsb(0.07, 0.45, 0.37, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatCoffee = hsb(0.07, 0.31, 0.64, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatForestGreen = hsb(0.38, 0.45, 0.37, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatGray = hsb(0.51, 0.10, 0.65, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatGreen = hsb(0.40, 0.77, 0.80, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatLime = hsb(0.21, 0.70, 0.78, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatMagenta = hsb(0.79, 0.51, 0.71, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatMaroon = hsb(0.01, 0.65, 0.47, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatMint = hsb(0.47, 0.86, 0.74, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatNavyBlue = hsb(0.58, 0.45, 0.37, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatOrange = hsb(0.08, 0.85, 0.90, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPink = hsb(0.90, 0.49, 0.96, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPlum = hsb(0.83, 0.45, 0.37, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPowderBlue = hsb(0.62, 0.24, 0.95, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPurple = hsb(0.70, 0.52, 0.77, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatRed = hsb(0.02, 0.74, 0.91, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatSand = hsb(0.12, 0.25, 0.94, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatSkyBlue = hsb(0.57, 0.76, 0.86, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatTeal = hsb(0.54, 0.55, 0.51, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatWatermelon = hsb(0.99, 0.53, 0.94, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatWhite = hsb(0.53, 0.02, 0.95, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatYellow = hsb(0.13, 0.99, 1.00, 1.0)
+    
+    
+    
+    /// Flat UI colors from Chameleon
+    public static var flatBlackDark = hsb(0.00, 0.00, 0.15, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatBlueDark = hsb(0.62, 0.56, 0.51, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatBrownDark = hsb(0.07, 0.45, 0.31, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatCoffeeDark = hsb(0.07, 0.34, 0.56, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatForestGreenDark = hsb(0.38, 0.44, 0.31, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatGrayDark = hsb(0.51, 0.10, 0.55, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatGreenDark = hsb(0.40, 0.78, 0.68, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatLimeDark = hsb(0.21, 0.81, 0.69, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatMagentaDark = hsb(0.78, 0.61, 0.68, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatMaroonDark = hsb(0.01, 0.68, 0.40, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatMintDark = hsb(0.47, 0.86, 0.63, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatNavyBlueDark = hsb(0.58, 0.45, 0.31, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatOrangeDark = hsb(0.07, 1.00, 0.83, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPinkDark = hsb(0.91, 0.57, 0.83, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPlumDark = hsb(0.83, 0.46, 0.31, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPowderBlueDark = hsb(0.62, 0.28, 0.84, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatPurpleDark = hsb(0.70, 0.56, 0.64, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatRedDark = hsb(0.02, 0.78, 0.75, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatSandDark = hsb(0.12, 0.30, 0.84, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatSkyBlueDark = hsb(0.57, 0.78, 0.73, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatTealDark = hsb(0.54, 0.54, 0.45, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatWatermelonDark = hsb(0.99, 0.61, 0.85, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatWhiteDark = hsb(0.57, 0.05, 0.78, 1.0)
+    
+    /// Flat UI colors from Chameleon
+    public static var flatYellowDark = hsb(0.11, 1.00, 1.00, 1.0)
+    
+}
+
 #endif
