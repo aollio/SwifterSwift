@@ -23,20 +23,40 @@ public extension UserDefaults {
             set(newValue, forKey: key)
         }
     }
+    
+    /// SwifterSwift: Int from UserDefaults.
+    ///
+    /// - Parameter for: key to find Int forKey.
+    /// - Parameter default: default value if not exists
+    /// - Returns: Float object for key (if not exists, default value will returned).
+    public func int(for key: String, default defaultValue: Int) -> Int {
+        return object(forKey: key) as? Int ?? defaultValue
+    }
 
     /// SwifterSwift: Float from UserDefaults.
     ///
-    /// - Parameter forKey: key to find float for.
-    /// - Returns: Float object for key (if exists).
-    public func float(forKey key: String) -> Float? {
-        return object(forKey: key) as? Float
+    /// - Parameter for: key to find float forKey.
+    /// - Parameter default: default value if not exists
+    /// - Returns: Float object for key (if not exists, default value will returned).
+    public func float(for key: String, default defaultValue: Float) -> Float {
+        return object(forKey: key) as? Float ?? defaultValue
     }
+    
+    /// SwifterSwift: Float from UserDefaults.
+    ///
+    /// - Parameter for: key to find float forKey.
+    /// - Parameter default: default value if not exists
+    /// - Returns: Float object for key (if not exists, default value will returned).
+    public func double(for key: String, default defaultValue: Double) -> Double {
+        return object(forKey: key) as? Double ?? defaultValue
+    }
+    
 
     /// SwifterSwift: Date from UserDefaults.
     ///
     /// - Parameter forKey: key to find date for.
     /// - Returns: Date object for key (if exists).
-    public func date(forKey key: String) -> Date? {
+    public func date(for key: String) -> Date? {
         return object(forKey: key) as? Date
     }
 
