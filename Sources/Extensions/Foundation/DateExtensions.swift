@@ -1006,9 +1006,16 @@ public extension Date {
 			return rv
 		}
 	}
+    
+    static func nowWithCurrentTimeZone() -> Date {
+        let now = Date()
+        let timeZone = TimeZone.current
+        let interval: Int = timeZone.secondsFromGMT(for: now)
+        return now.addingTimeInterval(Double(interval))
+    }
 
 	static func today(_ type: CreationType = .firstSecond) -> Date {
-		let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
+		let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: nowWithCurrentTimeZone())
 		return Calendar.current.date(from: type.revise(dateComponents))!
 	}
 
