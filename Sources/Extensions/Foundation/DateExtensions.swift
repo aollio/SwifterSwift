@@ -286,7 +286,7 @@ public extension Date {
 //    public var isInFuture: Bool {
 //        return self > Date()
 //    }
-//
+
 //    /// SwifterSwift: Check if date is in past.
 //    ///
 //    ///     Date(timeInterval: -100, since: Date()).isInPast -> true
@@ -295,22 +295,22 @@ public extension Date {
 //        return self < Date()
 //    }
 //
-//    /// SwifterSwift: Check if date is within today.
-//    ///
-//    ///     Date().isInToday -> true
-//    ///
-//    public var isInToday: Bool {
-//        return Calendar.current.isDateInToday(self)
-//    }
-//
-//    /// SwifterSwift: Check if date is within yesterday.
-//    ///
-//    ///     Date().isInYesterday -> false
-//    ///
-//    public var isInYesterday: Bool {
-//        return Calendar.current.isDateInYesterday(self)
-//    }
-//
+    /// SwifterSwift: Check if date is within today.
+    ///
+    ///     Date().isInToday -> true
+    ///
+    public var isInToday: Bool {
+        return Calendar.current.isDateInToday(self)
+    }
+
+    /// SwifterSwift: Check if date is within yesterday.
+    ///
+    ///     Date().isInYesterday -> false
+    ///
+    public var isInYesterday: Bool {
+        return Calendar.current.isDateInYesterday(self)
+    }
+
 //    /// SwifterSwift: Check if date is within tomorrow.
 //    ///
 //    ///     Date().isInTomorrow -> false
