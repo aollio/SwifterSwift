@@ -987,45 +987,14 @@ public extension Date {
 }
 
 public extension Date {
-	enum CreationType: Int {
-		case firstSecond
-		case lastSecond
-
-		func revise(_ dateComponents: DateComponents) -> DateComponents {
-			var rv = dateComponents
-			switch self {
-			case .firstSecond:
-				rv.hour = 0
-				rv.minute = 0
-				rv.second = 0
-			case .lastSecond:
-				rv.hour = 23
-				rv.minute = 59
-				rv.second = 59
-			}
-			return rv
-		}
-	}
     
-    static func nowWithCurrentTimeZone() -> Date {
-        let now = Date()
+    /// 返回一个相对的时间
+    var currentTimeZoneDate: Date {
         let timeZone = TimeZone.current
-        let interval: Int = timeZone.secondsFromGMT(for: now)
-        return now.addingTimeInterval(Double(interval))
+        let interval: Int = timeZone.secondsFromGMT(for: self)
+        return self.addingTimeInterval(Double(interval))
     }
 
-	static func today(_ type: CreationType = .firstSecond) -> Date {
-		let dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: nowWithCurrentTimeZone())
-		return Calendar.current.date(from: type.revise(dateComponents))!
-	}
-
-	static func tomorrow(_ type: CreationType = .firstSecond) -> Date {
-		return today(type).adding(.day, value: 1)
-	}
-
-	static func thisWeek(_ type: CreationType = .firstSecond) -> Date {
-		return today(type).adding(.day, value: 7)
-	}
 }
 
 #endif
