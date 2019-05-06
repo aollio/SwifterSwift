@@ -246,8 +246,8 @@ public struct SwifterSwift {
             return UIApplication.shared.statusBarStyle
         }
         set {
-            if let style = newValue {
-                UIApplication.shared.statusBarStyle = style
+            if let position = newValue {
+                UIApplication.shared.statusBarStyle = position
             }
         }
     }

@@ -23,9 +23,9 @@ public extension UILabel {
     /// - Parameters:
     ///   - text: the label's text.
     ///   - style: the text style of the label, used to determine which font should be used.
-    public convenience init(text: String, style: UIFont.TextStyle) {
+    public convenience init(text: String, position: UIFont.TextStyle) {
         self.init()
-        font = UIFont.preferredFont(forTextStyle: style)
+        font = UIFont.preferredFont(forTextStyle: position)
         self.text = text
     }
 
