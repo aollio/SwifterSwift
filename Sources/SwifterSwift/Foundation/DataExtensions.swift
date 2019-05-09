@@ -9,15 +9,21 @@
 #if canImport(Foundation)
 import Foundation
 
+
 // MARK: - Properties
 public extension Data {
-
+    
     /// SwifterSwift: Return data as an array of bytes.
-    var bytes: [UInt8] {
+    public var bytes: [UInt8] {
         // http://stackoverflow.com/questions/38097710/swift-3-changes-for-getbytes-method
         return [UInt8](self)
     }
-
+    
+    /// MB Size.
+    var mb: Double {
+        return (self.count.double / 1024 / 1024).roundTo(places: 2)
+    }
+    
 }
 
 // MARK: - Methods

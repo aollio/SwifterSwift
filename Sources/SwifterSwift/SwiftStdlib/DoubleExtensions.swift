@@ -35,6 +35,13 @@ public extension Double {
         return CGFloat(self)
     }
     #endif
+    
+    /// Rounds the double to decimal places value
+    /// e.g. 5.5421 => 5.54
+    func roundTo(places: Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
+    }
 
 }
 

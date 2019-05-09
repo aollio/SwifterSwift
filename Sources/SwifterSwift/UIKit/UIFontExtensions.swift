@@ -33,6 +33,51 @@ public extension UIFont {
         let newDescriptor = fontDescriptor.addingAttributes(attributes)
         return UIFont(descriptor: newDescriptor, size: 0)
     }
+    
+    
+    static var largeTitle: UIFont {
+        return UIFont.preferredFont(forTextStyle: .largeTitle)
+    }
+    
+    static var title1: UIFont {
+        return UIFont.preferredFont(forTextStyle: .title1)
+    }
+    
+    static var title2: UIFont {
+        return UIFont.preferredFont(forTextStyle: .title2)
+    }
+    
+    static var title3: UIFont {
+        return UIFont.preferredFont(forTextStyle: .title3)
+    }
+    
+    static var headline: UIFont {
+        return UIFont.preferredFont(forTextStyle: .headline)
+    }
+    
+    static var body: UIFont {
+        return UIFont.preferredFont(forTextStyle: .body)
+    }
+    
+    static var smallBody: UIFont {
+        return UIFont.preferredFont(forTextStyle: .body).withSize(15.0)
+    }
+    
+    static var size14: UIFont {
+        return UIFont.preferredFont(forTextStyle: .body).withSize(14.0)
+    }
+    
+    static var caption1: UIFont {
+        return UIFont.preferredFont(forTextStyle: .caption1)
+    }
+    
+    static var caption2: UIFont {
+        return UIFont.preferredFont(forTextStyle: .caption2)
+    }
+    
+    static var footnote: UIFont {
+        return UIFont.preferredFont(forTextStyle: .footnote)
+    }
 
 }
 

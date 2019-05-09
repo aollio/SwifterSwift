@@ -24,20 +24,39 @@ public extension UserDefaults {
         }
     }
 
-    /// SwifterSwift: Float from UserDefaults.
-    ///
-    /// - Parameter forKey: key to find float for.
-    /// - Returns: Float object for key (if exists).
-    func float(forKey key: String) -> Float? {
-        return object(forKey: key) as? Float
-    }
-
     /// SwifterSwift: Date from UserDefaults.
     ///
     /// - Parameter forKey: key to find date for.
     /// - Returns: Date object for key (if exists).
     func date(forKey key: String) -> Date? {
         return object(forKey: key) as? Date
+    }
+    
+    /// SwifterSwift: Int from UserDefaults.
+    ///
+    /// - Parameter for: key to find Int forKey.
+    /// - Parameter default: default value if not exists
+    /// - Returns: Float object for key (if not exists, default value will returned).
+    func int(for key: String, default defaultValue: Int) -> Int {
+        return object(forKey: key) as? Int ?? defaultValue
+    }
+    
+    /// SwifterSwift: Float from UserDefaults.
+    ///
+    /// - Parameter for: key to find float forKey.
+    /// - Parameter default: default value if not exists
+    /// - Returns: Float object for key (if not exists, default value will returned).
+    func float(for key: String, default defaultValue: Float) -> Float {
+        return object(forKey: key) as? Float ?? defaultValue
+    }
+    
+    /// SwifterSwift: Float from UserDefaults.
+    ///
+    /// - Parameter for: key to find float forKey.
+    /// - Parameter default: default value if not exists
+    /// - Returns: Float object for key (if not exists, default value will returned).
+    func double(for key: String, default defaultValue: Double) -> Double {
+        return object(forKey: key) as? Double ?? defaultValue
     }
 
     /// SwifterSwift: Retrieves a Codable object from UserDefaults.
@@ -62,6 +81,7 @@ public extension UserDefaults {
         let data = try? encoder.encode(object)
         set(data, forKey: key)
     }
+    
 
 }
 

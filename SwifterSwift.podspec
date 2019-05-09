@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.screenshot = 'https://raw.githubusercontent.com/SwifterSwift/SwifterSwift/master/Assets/logo.png'
   s.documentation_url = 'http://swifterswift.com/docs'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '11.0'
   s.osx.deployment_target = '10.10'
   s.tvos.deployment_target = '9.0'
   s.watchos.deployment_target = '2.0'
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.0'
   s.requires_arc = true
   s.source = { git: 'https://github.com/SwifterSwift/SwifterSwift.git', tag: s.version.to_s }
-  s.source_files = 'Sources/SwifterSwift/**/*.swift'
+  s.source_files = 'Sources/SwifterSwift/**/*.swift', 'Sources/*.h'
 
   # SwiftStdlib Extensions
   s.subspec 'SwiftStdlib' do |sp|

@@ -24,6 +24,12 @@ import CoreGraphics
 
 // MARK: - Properties
 public extension String {
+    
+    /// Inline String. 「str」
+    var inline: String {
+        return "「\(self)」"
+    }
+
 
     #if canImport(Foundation)
     /// SwifterSwift: String decoded from base64 (if applicable).
