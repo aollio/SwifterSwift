@@ -162,14 +162,14 @@ public extension UITableView {
     ///   - name: UITableViewCell type.
     ///   - bundleClass: Class in which the Bundle instance will be based on.
     func register<T: UITableViewCell>(nibWithCellClass name: T.Type, at bundleClass: AnyClass? = nil) {
-        let identifier = String(describing: name)
+        let id = String(describing: name)
         var bundle: Bundle?
 
         if let bundleName = bundleClass {
             bundle = Bundle(for: bundleName)
         }
 
-        register(UINib(nibName: identifier, bundle: bundle), forCellReuseIdentifier: identifier)
+        register(UINib(nibName: id, bundle: bundle), forCellReuseIdentifier: id)
     }
 
     /// SwifterSwift: Check whether IndexPath is valid within the tableView

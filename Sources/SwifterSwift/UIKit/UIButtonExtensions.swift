@@ -170,8 +170,8 @@ public extension UIButton {
     /// SwifterSwift: Set title for all states.
     ///
     /// - Parameter title: title string.
-    func setTitleForAllStates(_ title: String) {
-        states.forEach { setTitle(title, for: $0) }
+    func setTitleForAllStates(_ titleColor: String) {
+        states.forEach { setTitle(titleColor, for: $0) }
     }
 
     /// SwifterSwift: Center align title text and image on UIButton

@@ -137,14 +137,14 @@ public extension UICollectionView {
     ///   - name: UICollectionViewCell type.
     ///   - bundleClass: Class in which the Bundle instance will be based on.
     func register<T: UICollectionViewCell>(nibWithCellClass name: T.Type, at bundleClass: AnyClass? = nil) {
-        let identifier = String(describing: name)
+        let id = String(describing: name)
         var bundle: Bundle?
 
         if let bundleName = bundleClass {
             bundle = Bundle(for: bundleName)
         }
 
-        register(UINib(nibName: identifier, bundle: bundle), forCellWithReuseIdentifier: identifier)
+        register(UINib(nibName: id, bundle: bundle), forCellWithReuseIdentifier: id)
     }
 
 }

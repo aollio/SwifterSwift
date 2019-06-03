@@ -20,13 +20,13 @@ public extension UITabBar {
     ///   - item: icon tint color for items.
     ///   - selectedItem: icon tint color for item.
     func setColors(
-        background: UIColor? = nil,
+        backgroundColor: UIColor? = nil,
         selectedBackground: UIColor? = nil,
         item: UIColor? = nil,
         selectedItem: UIColor? = nil) {
 
         // background
-        barTintColor = background ?? barTintColor
+        barTintColor = backgroundColor ?? barTintColor
 
         // selectedItem
         tintColor = selectedItem ?? tintColor

@@ -20,8 +20,8 @@ public extension UISegmentedControl {
         }
         set {
             removeAllSegments()
-            for (index, title) in newValue.enumerated() {
-                insertSegment(withTitle: title, at: index, animated: false)
+            for (index, titleColor) in newValue.enumerated() {
+                insertSegment(withTitle: titleColor, at: index, animated: false)
             }
         }
     }

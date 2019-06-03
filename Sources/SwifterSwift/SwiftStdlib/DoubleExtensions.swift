@@ -39,6 +39,9 @@ public extension Double {
     /// Rounds the double to decimal places value
     /// e.g. 5.5421 => 5.54
     func roundTo(places: Int) -> Double {
+        if places == 0 {
+            return Int(self).double
+        }
         let divisor = pow(10.0, Double(places))
         return (self * divisor).rounded() / divisor
     }
